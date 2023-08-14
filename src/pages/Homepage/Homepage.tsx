@@ -1,9 +1,15 @@
 import { collabImg1, collabImg2, collabImg3 } from "../../assets/images";
-import { HomeSection, ImgContainer, ImgTestSlide } from "./Homepage.styles";
+import {
+  HomeSection,
+  ImgContainer,
+  ImgTestSlide,
+  Title,
+} from "./Homepage.styles";
 
 export const Homepage = () => {
   return (
     <HomeSection>
+      <Title>KIA SAJO</Title>
       <ImgContainer>
         <ImgTestSlide
           animationType="fromLeft"
