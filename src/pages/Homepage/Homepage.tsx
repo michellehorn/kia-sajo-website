@@ -12,15 +12,15 @@ export const Homepage = () => {
       <Title>KIA SAJO</Title>
       <ImgContainer>
         <AnimationImg
-          animationtype="fromLeft"
+          animationType="fromLeft"
           src={collabImg1}
           height={380}
           delay={1}
           margin="0 -25px 0 0"
         />
-        <AnimationImg animationtype="fadeIn" src={collabImg2} height={500} index={20} />
+        <AnimationImg animationType="fadeIn" src={collabImg2} height={500} index={20} />
         <AnimationImg
-          animationtype="fromRight"
+          animationType="fromRight"
           src={collabImg3}
           delay={1}
           duration={1}

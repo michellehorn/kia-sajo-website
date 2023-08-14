@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { background } from "../../assets";
 
 interface AnimationImgProps {
-  animationtype: string;
+  animationType: string;
   index?: number;
   margin?: string;
   delay?: number;
@@ -81,7 +81,7 @@ export const ImgContainer = styled.div`
 export const AnimationImg = styled.img<AnimationImgProps>`
   animation-duration: ${({ duration }) => duration || 2}s;
   animation-fill-mode: forwards;
-  animation-name: ${({ animationtype }) => handleAnimation(animationtype)};
+  animation-name: ${({ animationType }) => handleAnimation(animationType)};
   animation-timing-function: ease-in-out;
   height: ${({ height }) => height || "100%"};
   margin: ${({ margin }) => margin || "0px"};
