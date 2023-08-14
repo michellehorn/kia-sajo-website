@@ -2,7 +2,7 @@ import { collabImg1, collabImg2, collabImg3 } from "../../assets/images";
 import {
   HomeSection,
   ImgContainer,
-  ImgTestSlide,
+  AnimationImg,
   Title,
 } from "./Homepage.styles";
 
@@ -11,16 +11,19 @@ export const Homepage = () => {
     <HomeSection>
       <Title>KIA SAJO</Title>
       <ImgContainer>
-        <ImgTestSlide
-          animationType="fromLeft"
+        <AnimationImg
+          animationtype="fromLeft"
           src={collabImg1}
           height={380}
+          delay={1}
           margin="0 -25px 0 0"
         />
-        <ImgTestSlide animationType="fadeIn" src={collabImg2} height={500} />
-        <ImgTestSlide
-          animationType="fromRight"
+        <AnimationImg animationtype="fadeIn" src={collabImg2} height={500} index={20} />
+        <AnimationImg
+          animationtype="fromRight"
           src={collabImg3}
+          delay={1}
+          duration={1}
           height={480}
           margin="0 0 0 -50px"
         />
