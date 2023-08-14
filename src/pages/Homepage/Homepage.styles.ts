@@ -48,13 +48,16 @@ const slideFromLeft = keyframes`
 export const HomeSection = styled.section`
   background-image: url(${background});
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  align-items: end;
   height: 100%;
 `;
 
 export const ImgContainer = styled.div`
   display: flex;
   align-items: flex-end;
+  height: 400px;
+  margin-right: 1em;
 `;
 
 export const ImgTestSlide = styled.img<ImgTestProps>`
@@ -62,6 +65,6 @@ export const ImgTestSlide = styled.img<ImgTestProps>`
   animation-fill-mode: forwards;
   animation-name: ${({ animationType }) => handleAnimation(animationType)};
   animation-timing-function: ease-in-out;
-  height: 100%;
+  height: ${({ height }) => height || "100%"};
   margin: ${({ margin }) => margin || "0px"};
 `;
