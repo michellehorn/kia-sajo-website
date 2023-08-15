@@ -63,6 +63,8 @@ export const Gallery = () => {
       <Carousel
         rewind
         infinite
+        autoPlay
+        autoPlaySpeed={3200}
         responsive={responsive}
         draggable
         slidesToSlide={1}
