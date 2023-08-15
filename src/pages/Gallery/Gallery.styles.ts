@@ -12,6 +12,7 @@ export const GalleryItem = styled.img`
   object-fit: contain;
   border-top: none;
   border-bottom: none;
+  margin-bottom: -5px;
 `;
 
 interface GalleryVideoProps {
