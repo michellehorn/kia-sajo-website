@@ -63,22 +63,16 @@ export const Gallery = () => {
       <Carousel
         rewind
         infinite
-        swipeable
         responsive={responsive}
         draggable
         slidesToSlide={1}
         keyBoardControl
-          
       >
         {/* FECHAR NO ESC */}
         {videoGallery.map((item) => (
           <>
-            <GalleryVideo
-              imgurl={`http://img.youtube.com/vi/${item}/0.jpg`}
-              onClick={() => handleVideoOpen(item)}
-            
-            >
-              <PlayArrowIcon />
+            <GalleryVideo imgUrl={`http://img.youtube.com/vi/${item}/0.jpg`}>
+              <PlayArrowIcon onClick={() => handleVideoOpen(item)} />
             </GalleryVideo>
           </>
         ))}
