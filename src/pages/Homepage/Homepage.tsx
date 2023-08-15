@@ -1,10 +1,6 @@
 import { collabImg1, collabImg2, collabImg3 } from "../../assets/images";
-import {
-  HomeSection,
-  ImgContainer,
-  AnimationImg,
-  Title,
-} from "./Homepage.styles";
+import { AnimationImg, Title } from "../../styles/shared";
+import { HomeSection, ImgContainer } from "./Homepage.styles";
 
 export const Homepage = () => {
   return (
@@ -18,7 +14,12 @@ export const Homepage = () => {
           delay={1}
           margin="0 -25px 0 0"
         />
-        <AnimationImg animationType="fadeIn" src={collabImg2} height={500} index={20} />
+        <AnimationImg
+          animationType="fadeIn"
+          src={collabImg2}
+          height={500}
+          index={20}
+        />
         <AnimationImg
           animationType="fromRight"
           src={collabImg3}

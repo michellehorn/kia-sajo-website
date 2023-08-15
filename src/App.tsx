@@ -1,11 +1,16 @@
-import { Homepage } from "./pages";
+import ContainerParallax from "./components/ContainerParallax";
+import { About, Gallery, Homepage } from "./pages";
 import GlobalStyle from "./styles/globalStyle";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Homepage />
+      <ContainerParallax>
+        <Homepage />
+        <About />
+        <Gallery />
+      </ContainerParallax>
     </>
   );
 }

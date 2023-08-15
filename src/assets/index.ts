@@ -1,3 +1,3 @@
-import background from "./background.png";
+import background from "./images/background.png";
 
-export { background};
+export { background };

@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #002240;
+  background-color: #620000;
   min-height: 100%;
   width: 100%;
 }`;
