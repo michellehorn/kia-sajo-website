@@ -14,3 +14,36 @@ export const GalleryItem = styled.img`
   border-top: none;
   border-bottom: none;
 `;
+
+interface GalleryVideoProps {
+  imgurl: string;
+}
+export const GalleryVideo = styled.div<GalleryVideoProps>`
+  background-image: url(${({ imgurl }) => imgurl});
+  background-position: center;
+  background-color: transparent;
+  background-clip: content-box;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+
+  & > svg {
+    background-color: #fff;
+    border-radius: 100px;
+    fill: #db0000;
+    margin: auto 0;
+    position: relative;
+    height: 100px;
+    opacity: 0.6;
+    width: 100px;
+
+    &:hover {
+      opacity: 0.9;
+      height: 110px;
+      width: 110px;
+      transition: ease-in 0.1s;
+    }
+  }
+`;

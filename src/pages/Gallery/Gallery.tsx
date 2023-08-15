@@ -1,9 +1,28 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import ModalVideo from "react-modal-video";
+import { useState } from "react";
 import { gallery } from "../../assets/images";
-import { GalleryItem, SectionGallery } from "./Gallery.styles";
+import { GalleryItem, GalleryVideo, SectionGallery } from "./Gallery.styles";
+import "../../../node_modules/react-modal-video/css/modal-video.css";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+
+const videoGallery = [
+  "YTE9iyDu9ho",
+  "xSmFiPJbR7Y",
+  "V3IupSW-AlE",
+  "YyiRcNPleMc",
+];
 
 export const Gallery = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [videoId, setVideoId] = useState("");
+
+  const handleVideoOpen = (id: string) => {
+    setVideoId(id);
+    setOpen(true);
+  };
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -22,6 +41,7 @@ export const Gallery = () => {
       items: 1,
     },
   };
+
   return (
     <SectionGallery>
       <Carousel
@@ -39,6 +59,37 @@ export const Gallery = () => {
           <GalleryItem src={item} />
         ))}
       </Carousel>
+
+      <Carousel
+        rewind
+        infinite
+        swipeable
+        responsive={responsive}
+        draggable
+        slidesToSlide={1}
+        keyBoardControl
+          
+      >
+        {/* FECHAR NO ESC */}
+        {videoGallery.map((item) => (
+          <>
+            <GalleryVideo
+              imgurl={`http://img.youtube.com/vi/${item}/0.jpg`}
+              onClick={() => handleVideoOpen(item)}
+            
+            >
+              <PlayArrowIcon />
+            </GalleryVideo>
+          </>
+        ))}
+      </Carousel>
+      <ModalVideo
+        channel="youtube"
+        youtube={{ mute: 0, autoplay: 0 }}
+        isOpen={isOpen}
+        videoId={videoId}
+        onClose={() => setOpen(false)}
+      />
     </SectionGallery>
   );
 };
