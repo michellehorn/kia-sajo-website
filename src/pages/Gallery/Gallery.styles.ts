@@ -8,13 +8,10 @@ export const SectionGallery = styled(Section)`
 export const GalleryItem = styled.img`
   background-clip: content-box;
   background-position: bottom center;
-  height: 400px;
+  height: 330px;
   object-fit: contain;
-  border: 10px solid rgba(255, 255, 255, 0.2);
   border-top: none;
   border-bottom: none;
-<<<<<<< Updated upstream
-=======
   margin-bottom: -5px;
 `;
 
@@ -40,7 +37,7 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
     margin: auto 0;
     position: relative;
     height: 80px;
-    opacity: 0.6;
+    opacity: 0.7;
     width: 80px;
     cursor: pointer;
 
@@ -51,5 +48,4 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
       box-shadow: 1px 1px 5px #888;
     }
   }
->>>>>>> Stashed changes
 `;
