@@ -46,7 +46,7 @@ export const AnimationImg = styled.img<StyleProps>`
   animation-duration: ${({ duration }) => duration || 2}s;
   animation-fill-mode: forwards;
   animation-name: ${({ animationType }) =>
-    animationType && handleAnimation(animationType)};
+    animationType ? handleAnimation(animationType) : ""};
   animation-timing-function: ease-in-out;
   height: ${({ height }) => height || "100%"};
   padding: ${({ padding }) => padding || "0px"};

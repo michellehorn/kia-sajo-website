@@ -36,7 +36,7 @@ export const About = () => {
   return (
     <SectionAbout id="sectionAbout">
       <SectionInfo>
-        <SectionTitle fontSize="40px">A CANTORA</SectionTitle>
+        <SectionTitle fontSize="40px">A ARTISTA</SectionTitle>
         <SectionDescription>{about}</SectionDescription>
       </SectionInfo>
       <AnimationImg

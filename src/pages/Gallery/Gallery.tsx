@@ -1,13 +1,17 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ModalVideo from "react-modal-video";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { gallery } from "../../assets/images";
 import { GalleryItem, GalleryVideo, SectionGallery } from "./Gallery.styles";
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { SwipeableDrawer } from "@mui/material";
+import { isMobile } from "react-device-detect";
+import ReactPlayer from "react-player";
 
 const videoGallery = [
+  "MJ09dpL5SG0",
   "YTE9iyDu9ho",
   "xSmFiPJbR7Y",
   "V3IupSW-AlE",
@@ -18,10 +22,14 @@ export const Gallery = () => {
   const [isOpen, setOpen] = useState(false);
   const [videoId, setVideoId] = useState("");
 
-  const handleVideoOpen = (id: string) => {
-    setVideoId(id);
+  const handleVideoOpen = async (id: string) => {
+    await setVideoId(id);
     setOpen(true);
   };
+
+  useEffect(() => {
+    console.log(videoId);
+  }, [videoId]);
 
   const responsive = {
     superLargeDesktop: {
@@ -63,8 +71,8 @@ export const Gallery = () => {
       <Carousel
         rewind
         infinite
-        autoPlay
-        autoPlaySpeed={3200}
+        // autoPlay
+        // autoPlaySpeed={3200}
         responsive={responsive}
         draggable
         slidesToSlide={1}
@@ -79,13 +87,39 @@ export const Gallery = () => {
           </>
         ))}
       </Carousel>
-      <ModalVideo
-        channel="youtube"
-        youtube={{ mute: 0, autoplay: 0 }}
-        isOpen={isOpen}
-        videoId={videoId}
-        onClose={() => setOpen(false)}
-      />
+      {isMobile ? (
+        <SwipeableDrawer
+          anchor="bottom"
+          open={isOpen}
+          onClose={() => {
+            setOpen(false);
+            setVideoId("");
+          }}
+          onOpen={() => setOpen(true)}
+        >
+          {videoId && (
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${videoId}`}
+              width="100%"
+              height={600}
+              playing={isOpen && videoId ? true : false}
+              muted={false}
+            />
+          )}
+          test
+        </SwipeableDrawer>
+      ) : (
+        <ModalVideo
+          channel="youtube"
+          youtube={{ mute: 0, autoplay: 0 }}
+          isOpen={isOpen}
+          videoId={videoId}
+          onClose={() => {
+            setOpen(false);
+            setVideoId("");
+          }}
+        />
+      )}
     </SectionGallery>
   );
 };

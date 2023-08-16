@@ -7,7 +7,7 @@ export const SectionAbout = styled(Section)`
   position: relative;
   box-shadow: 1px 1px 100px black;
   @media screen and (max-width:600px) {
-    padding-top: 2em;
+    padding: 2em 0;
   }
 `;
 

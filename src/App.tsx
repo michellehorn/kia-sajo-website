@@ -26,7 +26,7 @@ function App() {
         >
           <MenuBox>
             {items.map((item) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </MenuBox>
         </SwipeableDrawer>
