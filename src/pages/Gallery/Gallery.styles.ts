@@ -13,4 +13,43 @@ export const GalleryItem = styled.img`
   border: 10px solid rgba(255, 255, 255, 0.2);
   border-top: none;
   border-bottom: none;
+<<<<<<< Updated upstream
+=======
+  margin-bottom: -5px;
+`;
+
+interface GalleryVideoProps {
+  imgUrl: string;
+}
+export const GalleryVideo = styled.div<GalleryVideoProps>`
+  background-image: url(${({ imgUrl }) => imgUrl});
+  background-position: center;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 330px;
+  width: 330px;
+  transform: scale(1.46, 1.46);
+  transform-origin: center left;
+
+  & > svg {
+    background-color: #fff;
+    border-radius: 50%;
+    fill: #fd3f35;
+    margin: auto 0;
+    position: relative;
+    height: 80px;
+    opacity: 0.6;
+    width: 80px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.1);
+      transition: ease-in 0.1s;
+      box-shadow: 1px 1px 5px #888;
+    }
+  }
+>>>>>>> Stashed changes
 `;

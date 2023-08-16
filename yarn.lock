@@ -5695,6 +5695,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+<<<<<<< Updated upstream
 range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
@@ -5740,6 +5741,16 @@ re2@^1.17.7:
     node-gyp "^9.4.0"
 
 react-dom@^18.2.0:
+=======
+react-device-detect@^2.2.3:
+  version "2.2.3"
+  resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/react-device-detect/-/react-device-detect-2.2.3.tgz#97a7ae767cdd004e7c3578260f48cf70c036e7ca"
+  integrity sha1-l6eudnzdAE58NXgmD0jPcMA258o=
+  dependencies:
+    ua-parser-js "^1.0.33"
+
+"react-dom@^17.0.0 || ^18.0.0":
+>>>>>>> Stashed changes
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -6597,6 +6608,7 @@ typescript@^5.0.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
 
+<<<<<<< Updated upstream
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"
   resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
@@ -6611,6 +6623,20 @@ underscore@~1.13.2:
   version "1.13.6"
   resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/underscore/-/underscore-1.13.6.tgz#04786a1f589dc6c09f761fc5f45b89e935136441"
   integrity sha1-BHhqH1idxsCfdh/F9FuJ6TUTZEE=
+=======
+ua-parser-js@^1.0.33:
+  version "1.0.35"
+  resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/ua-parser-js/-/ua-parser-js-1.0.35.tgz#c4ef44343bc3db0a3cbefdf21822f1b1fc1ab011"
+  integrity sha1-xO9ENDvD2wo8vv3yGCLxsfwasBE=
+
+uglify-js@3.0.x:
+  version "3.0.28"
+  resolved "https://pkgs.dev.azure.com/ab-inbev/GHQ_ABI_PEOPLE_TECH_PLATFORM/_packaging/PeoplePlatformNpmMirror/npm/registry/uglify-js/-/uglify-js-3.0.28.tgz#96b8495f0272944787b5843a1679aa326640d5f7"
+  integrity sha1-lrhJXwJylEeHtYQ6FnmqMmZA1fc=
+  dependencies:
+    commander "~2.11.0"
+    source-map "~0.5.1"
+>>>>>>> Stashed changes
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"

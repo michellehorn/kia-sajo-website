@@ -3,7 +3,8 @@ import collabImg2 from "./collab-img2.png";
 import collabImg3 from "./collab-img3.png";
 
 //parallax
-import imgParallax2 from "./side.png";
+import imageSide from "./gitana.png";
+import imageSideMobile from "./gitana-mobile.png";
 import folder from "./photo3.png";
 
 //gallery
@@ -18,4 +19,12 @@ import img8 from "./gallery/image8.jpg";
 import img9 from "./gallery/image9.jpg";
 
 const gallery = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
-export { collabImg1, collabImg2, collabImg3, gallery, imgParallax2, folder };
+export {
+  collabImg1,
+  collabImg2,
+  collabImg3,
+  gallery,
+  imageSide,
+  imageSideMobile,
+  folder,
+};

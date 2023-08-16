@@ -1,8 +1,9 @@
 import { AnimationImg, SectionTitle } from "../../styles/shared";
 import { SectionAbout, SectionDescription, SectionInfo } from "./About.styles";
-import { imgParallax2 } from "../../assets/images";
+import { imageSide, imageSideMobile } from "../../assets/images";
 import { about } from "../../assets/json";
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 export const About = () => {
   const [animate, setAnimate] = useState(false);
@@ -27,21 +28,31 @@ export const About = () => {
     };
   }, []);
 
+  const getAnimationType = () => {
+    if (isMobile) return undefined;
+    if (animate) return "fromLeft";
+  };
+
   return (
     <SectionAbout id="sectionAbout">
       <SectionInfo>
         <SectionTitle fontSize="40px">A CANTORA</SectionTitle>
         <SectionDescription>{about}</SectionDescription>
       </SectionInfo>
-        <AnimationImg
-          src={imgParallax2}
-          animationType= {animate ? "fromRight" : ""}
-          height={550}
-          delay={1}
-          margin="0 0 -2px auto"
-          padding="0 2em 0 0"
-          style={{ position: "absolute", bottom: 0, right: "2em" }}
-        />
+      <AnimationImg
+        src={isMobile ? imageSideMobile : imageSide}
+        height={isMobile ? 450 : 550}
+        animationType={getAnimationType()}
+        delay={1}
+        margin="0 0 -2px auto"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          opacity: isMobile ? 0.3 : 0,
+        }}
+        indexSmall="0"
+      />
     </SectionAbout>
   );
 };

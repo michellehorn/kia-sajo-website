@@ -6,4 +6,5 @@ export interface StyleProps {
   delay?: number;
   duration?: number;
   padding?: string;
+  indexSmall?: string;
 }
