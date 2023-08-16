@@ -5,7 +5,32 @@ import { HomeSection, ImgContainer } from "./Homepage.styles";
 export const Homepage = () => {
   return (
     <HomeSection>
-      <Title>KIA SAJO</Title>
+      <div>
+        <Title>KIA SAJO</Title>
+        <iframe
+          style={{
+            borderRadius: "12px",
+            border: "none",
+            zIndex: 1000,
+          }}
+          src="https://open.spotify.com/embed/track/15IzZHxnTAU8FcIxOL3kya?utm_source=generator&theme=0"
+          width="100%"
+          height="100"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        {/* <iframe
+          style={{ borderRadius: "12px", border: "none" }}
+          src="https://open.spotify.com/embed/album/6rdHgZSX735bZVNEWePRuh?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          // frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe> */}
+      </div>
       <ImgContainer>
         <AnimationImg
           animationType="fromLeft"

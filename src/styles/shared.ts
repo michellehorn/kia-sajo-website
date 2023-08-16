@@ -57,6 +57,9 @@ export const AnimationImg = styled.img<StyleProps>`
   position: relative;
   filter: drop-shadow(5px -3px 2px #8c261d) drop-shadow(3px 0px 2px #680000)
     drop-shadow(3px 3px 5px #8c261d);
+  @media screen and (max-width: 600px) {
+    z-index: ${({ indexSmall }) => indexSmall || 0};
+  }
 `;
 
 // others
@@ -74,6 +77,9 @@ export const Parallax = styled.div`
 export const Section = styled.section`
   max-width: 100%;
   padding: 2em 2em 0 2em;
+  @media screen and (max-width: 600px) {
+    padding: 1em 1em 0;
+  }
 `;
 
 export const Title = styled.h1<StyleProps>`
@@ -82,15 +88,26 @@ export const Title = styled.h1<StyleProps>`
   font-style: normal;
   font-size: 140px;
   opacity: 0.8;
-  background: linear-gradient(90deg, #620000, transparent),
-    linear-gradient(90deg, transparent, #aa0000);
+  background: linear-gradient(90deg, #ffcba9, transparent),
+    linear-gradient(90deg, transparent, #ffcba9);
+  /* background: linear-gradient(90deg, #FFCBA9, transparent),
+    linear-gradient(90deg, transparent, #FFCBA9); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(2px 1px #fd0000);
+  filter: drop-shadow(2px 1px #ffcba9);
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-name: ${fadeIn};
   animation-timing-function: ease-in-out;
+  padding: 0;
+  margin: 0;
+  @media screen and (max-width: 600px) {
+    position: absolute;
+    z-index: 10;
+    font-size: 120px;
+    line-height: 100px;
+    bottom: 25%;
+  }
 `;
 
 export const SectionTitle = styled.h2<StyleProps>`
@@ -106,4 +123,25 @@ export const SectionTitle = styled.h2<StyleProps>`
   animation-timing-function: ease-in-out;
   width: fit-content;
   padding: ${({ padding }) => padding};
+  z-index: 10;
+  position: relative;
+`;
+
+export const MenuContainer = styled.div`
+  z-index: 1000;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  svg {
+    fill: white !important;
+  }
+  @media screen and (max-width: 600px) {
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+`;
+
+export const MenuBox = styled.nav`
+  width: 500px;
 `;
