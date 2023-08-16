@@ -45,7 +45,7 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
       opacity: 0.8;
       transform: scale(1.1);
       transition: ease-in 0.1s;
-      box-shadow: 1px 1px 3px #fd3f35;
+      box-shadow: 1px 1px 5px #888;
     }
   }
 `;
