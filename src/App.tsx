@@ -1,6 +1,6 @@
 import { Button, SwipeableDrawer } from "@mui/material";
 import ContainerParallax from "./components/ContainerParallax";
-import { About, Gallery, Homepage } from "./pages";
+import { About, Contact, Gallery, Homepage } from "./pages";
 import GlobalStyle from "./styles/globalStyle";
 import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -35,6 +35,7 @@ function App() {
         <Homepage />
         <About />
         <Gallery />
+        <Contact />
       </ContainerParallax>
     </>
   );
