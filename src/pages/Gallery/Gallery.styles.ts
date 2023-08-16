@@ -47,5 +47,10 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
       transition: ease-in 0.1s;
       box-shadow: 1px 1px 5px #888;
     }
+
+    @media screen and (max-width: 600px) {
+      margin: none;
+      margin-left: -20%;
+    }
   }
 `;
