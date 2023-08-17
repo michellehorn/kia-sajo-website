@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ModalVideo from "react-modal-video";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { gallery } from "../../assets/images";
 import { GalleryItem, GalleryVideo, SectionGallery } from "./Gallery.styles";
 import "../../../node_modules/react-modal-video/css/modal-video.css";
@@ -18,7 +18,7 @@ const videoGallery = [
   "YyiRcNPleMc",
 ];
 
-export const Gallery = () => {
+export const Gallery = ({ id }: { id: string }) => {
   const [isOpen, setOpen] = useState(false);
   const [videoId, setVideoId] = useState("");
 
@@ -26,10 +26,6 @@ export const Gallery = () => {
     await setVideoId(id);
     setOpen(true);
   };
-
-  useEffect(() => {
-    console.log(videoId);
-  }, [videoId]);
 
   const responsive = {
     superLargeDesktop: {
@@ -51,15 +47,13 @@ export const Gallery = () => {
   };
 
   return (
-    <SectionGallery>
+    <SectionGallery id={id}>
       <Carousel
         autoPlay
         autoPlaySpeed={3000}
         rewind
         infinite
-        swipeable
         responsive={responsive}
-        draggable
         slidesToSlide={1}
         keyBoardControl
       >
@@ -71,8 +65,8 @@ export const Gallery = () => {
       <Carousel
         rewind
         infinite
-        // autoPlay
-        // autoPlaySpeed={3200}
+        autoPlay
+        autoPlaySpeed={3200}
         responsive={responsive}
         draggable
         slidesToSlide={1}
@@ -104,6 +98,7 @@ export const Gallery = () => {
               height={600}
               playing={isOpen && videoId ? true : false}
               muted={false}
+              pip
             />
           )}
           test

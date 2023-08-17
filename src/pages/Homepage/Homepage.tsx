@@ -2,9 +2,9 @@ import { collabImg1, collabImg2, collabImg3 } from "../../assets/images";
 import { AnimationImg, Title } from "../../styles/shared";
 import { HomeSection, ImgContainer } from "./Homepage.styles";
 
-export const Homepage = () => {
+export const Homepage = ({ id }: { id: string }) => {
   return (
-    <HomeSection>
+    <HomeSection id={id}>
       <div>
         <Title>KIA SAJO</Title>
         <iframe

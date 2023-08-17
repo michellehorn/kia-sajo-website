@@ -6,7 +6,8 @@ export const SectionAbout = styled(Section)`
   display: flex;
   position: relative;
   box-shadow: 1px 1px 100px black;
-  @media screen and (max-width:600px) {
+  height: 95vh;
+  @media screen and (max-width: 600px) {
     padding: 2em 0;
   }
 `;
@@ -27,8 +28,12 @@ export const SectionDescription = styled.p`
 `;
 
 export const SectionInfo = styled.p`
-  padding: 0 4em 3em;
-  @media screen and (max-width:600px) {
-    padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3em; 
+  @media screen and (max-width: 600px) {
+    padding: 2em;
+    margin-top: -1.5em;
   }
 `;
