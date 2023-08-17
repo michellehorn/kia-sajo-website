@@ -1,8 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+html, body, #root  {
+  scroll-behavior: smooth!important;
+}
+
 #root{
   height: 100vh;
+  overflow-y: scroll;
 }
 
 body {

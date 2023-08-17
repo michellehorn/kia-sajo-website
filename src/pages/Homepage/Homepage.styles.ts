@@ -8,6 +8,7 @@ export const HomeSection = styled.section`
   margin-left: 7em;
 
   @media screen and (max-width: 600px) {
+  position: relative;
     margin-left: 1em;
     iframe {
       position: absolute;

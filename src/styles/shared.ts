@@ -143,5 +143,10 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuBox = styled.nav`
-  width: 500px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  padding: 1em;
+  font-size: 20px;
 `;
