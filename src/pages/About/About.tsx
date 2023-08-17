@@ -5,13 +5,13 @@ import { about } from "../../assets/json";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
-export const About = () => {
+export const About = ({ id }: { id: string }) => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     //TODO: Refatorar e construir hook
     const handleScroll = () => {
-      const sectionAbout = document.getElementById("sectionAbout");
+      const sectionAbout = document.getElementById(id);
       if (sectionAbout) {
         const offsetTop = sectionAbout.offsetTop;
         const windowHeight = window.innerHeight;
@@ -34,7 +34,7 @@ export const About = () => {
   };
 
   return (
-    <SectionAbout id="sectionAbout">
+    <SectionAbout id={id}>
       <SectionInfo>
         <SectionTitle fontSize="40px">A ARTISTA</SectionTitle>
         <SectionDescription>{about}</SectionDescription>
@@ -49,7 +49,7 @@ export const About = () => {
           position: "absolute",
           bottom: 0,
           right: 0,
-          opacity: isMobile ? 0.3 : 0,
+          opacity: isMobile ? 0.4 : 0,
         }}
         indexSmall="0"
       />
