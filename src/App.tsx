@@ -1,18 +1,13 @@
 import { Button, Link, SwipeableDrawer } from "@mui/material";
-import firebase from "firebase/app";
-import ContainerParallax from "./components/ContainerParallax";
 import { About, Album, Gallery, Homepage } from "./pages";
 import GlobalStyle from "./styles/globalStyle";
 import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { MenuBox, MenuContainer } from "./styles/shared";
-import { firebaseConfig } from "./firebase.config";
+import { MenuBox, MenuContainer, Parallax } from "./styles/shared";
 
 function App() {
   const items = ["home", "sobre-mim", "galeria", "ouca-agora", "contato"];
   const [state, toggleDrawer] = useState(false);
-
-  firebase.initializeApp(firebaseConfig);
 
   return (
     <>
@@ -38,14 +33,15 @@ function App() {
           </MenuBox>
         </SwipeableDrawer>
       </Fragment>
-      <ContainerParallax>
+      <>
+        <Parallax />
         <Homepage id="home" />
         <div id="sobre-mim">
           <About id="sobre-mim2" />
         </div>
         <Gallery id="galeria" />
         <Album id="ouca-agora" />
-      </ContainerParallax>
+      </>
     </>
   );
 }

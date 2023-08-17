@@ -67,16 +67,15 @@ export const AnimationImg = styled.img<StyleProps>`
 export const Parallax = styled.div`
   background-image: url(${background});
   height: 400vh;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100%;
+  position: absolute;
+  z-index: -2;
 `;
 
 export const Section = styled.section`
   max-width: 100%;
   padding: 2em 2em 0 2em;
+  height: 90vh;
   @media screen and (max-width: 600px) {
     padding: 1em 1em 0;
   }

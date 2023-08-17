@@ -5,8 +5,8 @@ export const SectionAbout = styled(Section)`
   background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   position: relative;
+  height: 75vh;
   box-shadow: 1px 1px 100px black;
-  height: 95vh;
   @media screen and (max-width: 600px) {
     padding: 2em 0;
   }

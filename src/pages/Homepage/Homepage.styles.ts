@@ -1,24 +1,21 @@
 import styled from "styled-components";
+import { Section } from "../../styles/shared";
 
-export const HomeSection = styled.section`
+export const HomeSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  margin-left: 7em;
+  margin: 0 0 0 7em;
 
   @media screen and (max-width: 600px) {
-  position: relative;
+    position: relative;
     margin-left: 1em;
     iframe {
       position: absolute;
-      bottom: 0;
+      bottom: 5%;
       width: 90%;
       height: 100px;
       opacity: 1;
-      /* div[data-testid="main-page"] {
-        
-      } */
     }
   }
 `;

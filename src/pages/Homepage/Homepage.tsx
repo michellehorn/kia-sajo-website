@@ -15,7 +15,7 @@ export const Homepage = ({ id }: { id: string }) => {
           }}
           src="https://open.spotify.com/embed/track/15IzZHxnTAU8FcIxOL3kya?utm_source=generator&theme=0"
           width="100%"
-          height="100"
+          height="100%"
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"

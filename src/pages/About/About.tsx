@@ -3,7 +3,7 @@ import { SectionAbout, SectionDescription, SectionInfo } from "./About.styles";
 import { imageSide, imageSideMobile } from "../../assets/images";
 import { about } from "../../assets/json";
 import { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+import { isMobile, isMobileOnly } from "react-device-detect";
 
 export const About = ({ id }: { id: string }) => {
   const [animate, setAnimate] = useState(false);
@@ -11,7 +11,7 @@ export const About = ({ id }: { id: string }) => {
   useEffect(() => {
     //TODO: Refatorar e construir hook
     const handleScroll = () => {
-      const sectionAbout = document.getElementById(id);
+      const sectionAbout = document.getElementById("sobre-mim");
       if (sectionAbout) {
         const offsetTop = sectionAbout.offsetTop;
         const windowHeight = window.innerHeight;
@@ -22,7 +22,9 @@ export const About = ({ id }: { id: string }) => {
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    if (isMobileOnly) {
+      window.addEventListener("scroll", handleScroll);
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

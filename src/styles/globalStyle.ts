@@ -4,10 +4,10 @@ const GlobalStyle = createGlobalStyle`
 
 html, body, #root  {
   scroll-behavior: smooth!important;
+  height: 100vh;
 }
 
 #root{
-  height: 100vh;
   overflow-y: scroll;
 }
 
@@ -17,7 +17,6 @@ body {
   overflow-x: hidden;
   background-color: #620000;
   min-height: 100%;
-  width: 100%;
 }`;
 
 export default GlobalStyle;
