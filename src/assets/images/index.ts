@@ -18,6 +18,9 @@ import img7 from "./gallery/image7.jpg";
 import img8 from "./gallery/image8.jpg";
 import img9 from "./gallery/image9.jpg";
 
+//contact
+import photo2 from "./photo2.png";
+
 const gallery = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 export {
   collabImg1,
@@ -27,4 +30,5 @@ export {
   imageSide,
   imageSideMobile,
   folder,
+  photo2,
 };

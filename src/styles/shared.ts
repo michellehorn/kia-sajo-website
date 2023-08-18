@@ -115,7 +115,7 @@ export const SectionTitle = styled.h2<StyleProps>`
   font-style: normal;
   font-size: ${({ fontSize }) => fontSize || 10};
   opacity: 0.8;
-  color: #aa0000;
+  color: ${({ fontcolor }) => fontcolor || "#aa0000"};
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-name: ${fadeIn};
@@ -124,6 +124,22 @@ export const SectionTitle = styled.h2<StyleProps>`
   padding: ${({ padding }) => padding};
   z-index: 10;
   position: relative;
+`;
+
+export const SectionDescription = styled.p<StyleProps>`
+  font-family: "Poppins", sans-serif;
+  font-size: ${({ fontSize }) => fontSize || 16};
+  font-weight: ${({ fontweight }) => fontweight || 400};
+  color: ${({ fontcolor }) => fontcolor || "#fff"};
+  position: relative;
+  text-align: ${({ textalign }) => textalign || "left"};
+  width: ${({ width }) => width || "650px"};
+  z-index: 10;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    font-size: 12px;
+    text-shadow: 1px 1px gray;
+  }
 `;
 
 export const MenuContainer = styled.div`

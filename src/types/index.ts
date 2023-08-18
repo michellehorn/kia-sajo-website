@@ -7,4 +7,8 @@ export interface StyleProps {
   duration?: number;
   padding?: string;
   indexSmall?: string;
+  fontcolor?:string;
+  width?: string;
+  textalign?: string;
+  fontweight?: number;
 }

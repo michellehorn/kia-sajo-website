@@ -1,38 +1,20 @@
-import { AnimationImg, SectionTitle } from "../../styles/shared";
-import { SectionAbout, SectionDescription, SectionInfo } from "./About.styles";
+import {
+  AnimationImg,
+  SectionDescription,
+  SectionTitle,
+} from "../../styles/shared";
+import { SectionAbout, SectionInfo } from "./About.styles";
 import { imageSide, imageSideMobile } from "../../assets/images";
 import { about } from "../../assets/json";
-import { useEffect, useState } from "react";
-import { isMobile, isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
+import useScrollAnimation from "../../utils/handleScrollAnimation";
 
 export const About = ({ id }: { id: string }) => {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    //TODO: Refatorar e construir hook
-    const handleScroll = () => {
-      const sectionAbout = document.getElementById("sobre-mim");
-      if (sectionAbout) {
-        const offsetTop = sectionAbout.offsetTop;
-        const windowHeight = window.innerHeight;
-        const scrollY = window.scrollY;
-        if (scrollY > offsetTop - windowHeight) {
-          setAnimate(true);
-          window.removeEventListener("scroll", handleScroll);
-        }
-      }
-    };
-    if (isMobileOnly) {
-      window.addEventListener("scroll", handleScroll);
-    }
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const shouldAnimate = useScrollAnimation("sobre-mim");
 
   const getAnimationType = () => {
     if (isMobile) return undefined;
-    if (animate) return "fromLeft";
+    if (shouldAnimate) return "fromLeft";
   };
 
   return (
