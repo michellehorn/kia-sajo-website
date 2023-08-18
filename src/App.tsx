@@ -1,7 +1,7 @@
 import { Button, Link, SwipeableDrawer } from "@mui/material";
 import firebase from "firebase/app";
 import ContainerParallax from "./components/ContainerParallax";
-import { About, Album, Gallery, Homepage } from "./pages";
+import { About, Album, Contact, Gallery, Homepage } from "./pages";
 import GlobalStyle from "./styles/globalStyle";
 import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -45,6 +45,7 @@ function App() {
         </div>
         <Gallery id="galeria" />
         <Album id="ouca-agora" />
+        <Contact />
       </ContainerParallax>
     </>
   );
