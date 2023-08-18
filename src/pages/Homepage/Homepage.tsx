@@ -2,9 +2,9 @@ import { collabImg1, collabImg2, collabImg3 } from "../../assets/images";
 import { AnimationImg, Title } from "../../styles/shared";
 import { HomeSection, ImgContainer } from "./Homepage.styles";
 
-export const Homepage = () => {
+export const Homepage = ({ id }: { id: string }) => {
   return (
-    <HomeSection>
+    <HomeSection id={id}>
       <div>
         <Title>KIA SAJO</Title>
         <iframe
@@ -20,16 +20,6 @@ export const Homepage = () => {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
-        {/* <iframe
-          style={{ borderRadius: "12px", border: "none" }}
-          src="https://open.spotify.com/embed/album/6rdHgZSX735bZVNEWePRuh?utm_source=generator&theme=0"
-          width="100%"
-          height="352"
-          // frameBorder="0"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe> */}
       </div>
       <ImgContainer>
         <AnimationImg

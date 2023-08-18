@@ -3,6 +3,9 @@ import { Section } from "../../styles/shared";
 
 export const SectionGallery = styled(Section)`
   padding: 1px;
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 export const GalleryItem = styled.img`
@@ -29,28 +32,33 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
   width: 330px;
   transform: scale(1.46, 1.46);
   transform-origin: center left;
+  box-shadow: 1px 1px 200px rgba(0, 0, 0, 0.9) inset;
 
   & > svg {
-    background-color: #fff;
-    border-radius: 50%;
-    fill: #fd3f35;
+    background-color: red;
+    border-radius: 20%;
+    fill: #fff;
     margin: auto 0;
     position: relative;
-    height: 80px;
-    opacity: 0.7;
-    width: 80px;
+    height: 20px;
+    width: 30px;
     cursor: pointer;
+    padding: 0.2em;
 
     &:hover {
-      opacity: 0.8;
       transform: scale(1.1);
       transition: ease-in 0.1s;
       box-shadow: 1px 1px 5px #888;
     }
 
     @media screen and (max-width: 600px) {
-      margin: none;
-      margin-left: -20%;
+      margin: auto;
+      position: absolute;
+      left: 30%;
     }
+  }
+  @media screen and (max-width: 600px) {
+    position: relative;
+    width: 100%;
   }
 `;

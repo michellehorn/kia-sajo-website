@@ -6,20 +6,24 @@ import { gallery } from "../../assets/images";
 import { GalleryItem, GalleryVideo, SectionGallery } from "./Gallery.styles";
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { SwipeableDrawer } from "@mui/material";
+import { isMobile } from "react-device-detect";
+import ReactPlayer from "react-player";
 
 const videoGallery = [
+  "MJ09dpL5SG0",
   "YTE9iyDu9ho",
   "xSmFiPJbR7Y",
   "V3IupSW-AlE",
   "YyiRcNPleMc",
 ];
 
-export const Gallery = () => {
+export const Gallery = ({ id }: { id: string }) => {
   const [isOpen, setOpen] = useState(false);
   const [videoId, setVideoId] = useState("");
 
-  const handleVideoOpen = (id: string) => {
-    setVideoId(id);
+  const handleVideoOpen = async (id: string) => {
+    await setVideoId(id);
     setOpen(true);
   };
 
@@ -43,15 +47,13 @@ export const Gallery = () => {
   };
 
   return (
-    <SectionGallery>
+    <SectionGallery id={id}>
       <Carousel
         autoPlay
         autoPlaySpeed={3000}
         rewind
         infinite
-        swipeable
         responsive={responsive}
-        draggable
         slidesToSlide={1}
         keyBoardControl
       >
@@ -79,13 +81,40 @@ export const Gallery = () => {
           </>
         ))}
       </Carousel>
-      <ModalVideo
-        channel="youtube"
-        youtube={{ mute: 0, autoplay: 0 }}
-        isOpen={isOpen}
-        videoId={videoId}
-        onClose={() => setOpen(false)}
-      />
+      {isMobile ? (
+        <SwipeableDrawer
+          anchor="bottom"
+          open={isOpen}
+          onClose={() => {
+            setOpen(false);
+            setVideoId("");
+          }}
+          onOpen={() => setOpen(true)}
+        >
+          {videoId && (
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${videoId}`}
+              width="100%"
+              height={600}
+              playing={isOpen && videoId ? true : false}
+              muted={false}
+              pip
+            />
+          )}
+          test
+        </SwipeableDrawer>
+      ) : (
+        <ModalVideo
+          channel="youtube"
+          youtube={{ mute: 0, autoplay: 0 }}
+          isOpen={isOpen}
+          videoId={videoId}
+          onClose={() => {
+            setOpen(false);
+            setVideoId("");
+          }}
+        />
+      )}
     </SectionGallery>
   );
 };
