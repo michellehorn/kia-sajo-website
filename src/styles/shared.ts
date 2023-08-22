@@ -128,7 +128,7 @@ export const SectionTitle = styled.h2<StyleProps>`
 
 export const SectionDescription = styled.p<StyleProps>`
   font-family: "Poppins", sans-serif;
-  font-size: ${({ fontSize }) => fontSize || 16};
+  font-size: ${({ fontSize }) => fontSize || "16px"};
   font-weight: ${({ fontweight }) => fontweight || 400};
   color: ${({ fontcolor }) => fontcolor || "#fff"};
   position: relative;
@@ -137,7 +137,6 @@ export const SectionDescription = styled.p<StyleProps>`
   z-index: 10;
   @media screen and (max-width: 600px) {
     width: 100%;
-    font-size: 12px;
     text-shadow: 1px 1px gray;
   }
 `;
@@ -158,10 +157,74 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuBox = styled.nav`
-  width: 150px;
+  width: 320px;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  gap: 12px;
   line-height: 30px;
   padding: 1em;
   font-size: 20px;
+  height: 100%;
+  background-color: #ff0101d9;
+
+  & > a {
+    font-size: 26px;
+    font-weight: 600;
+    color: #f3c00c;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+      transition: ease-in-out 0.1s;
+      opacity: 0.9;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 150px;
+  }
+`;
+
+export const MenuImgContainer = styled.div`
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  background-color: #fdc0a0;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  z-index: 20;
+  overflow: hidden;
+
+  & > img {
+    height: 170px;
+    transform: scaleX(-1);
+  }
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 20;
+  width: 100%;
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 8px;
+
+  & > a > svg {
+    fill: #f8d868;
+    height: 32px;
+    opacity: 0.8;
+    width: 50px;
+    transition: ease 0.5s;
+
+    &:hover {
+      scale: 1.2;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+  }
 `;
