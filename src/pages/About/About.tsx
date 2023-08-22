@@ -7,26 +7,20 @@ import { SectionAbout, SectionInfo } from "./About.styles";
 import { imageSide, imageSideMobile } from "../../assets/images";
 import { about } from "../../assets/json";
 import { isMobile } from "react-device-detect";
-import useScrollAnimation from "../../utils/handleScrollAnimation";
 
-export const About = () => {
-  const shouldAnimate = useScrollAnimation("sectionAbout");
-
-  const getAnimationType = () => {
-    if (isMobile) return undefined;
-    if (shouldAnimate) return "fromLeft";
-  };
-
+export const About = ({ id }: { id: string }) => {
   return (
     <SectionAbout id={id}>
       <SectionInfo>
         <SectionTitle fontSize="40px">A ARTISTA</SectionTitle>
-        <SectionDescription>{about}</SectionDescription>
+        <SectionDescription fontSize={isMobile ? "12px" : '16px'}>
+          {about}
+        </SectionDescription>
       </SectionInfo>
       <AnimationImg
         src={isMobile ? imageSideMobile : imageSide}
         height={isMobile ? 450 : 550}
-        animationType={getAnimationType()}
+        animationType={isMobile ? undefined : "fromLeft"}
         delay={1}
         margin="0 0 -2px auto"
         style={{

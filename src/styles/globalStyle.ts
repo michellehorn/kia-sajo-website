@@ -9,12 +9,12 @@ html, body, #root  {
 #root{
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   background-color: #620000;
   min-height: 100%;
   width: 100%;

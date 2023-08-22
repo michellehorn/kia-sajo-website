@@ -9,7 +9,6 @@ export const ContactSection = styled.section`
 
   @media screen and (max-width: 600px) {
     justify-content: center;
-    padding-top: 2em;
   }
 `;
 
@@ -21,8 +20,7 @@ export const ContactContainer = styled.div`
   margin-left: 7em;
 
   @media screen and (max-width: 600px) {
-  position: absolute;
-  margin: 0;
+    margin: 0;
   }
 `;
 export const IconContainer = styled.div`
@@ -44,12 +42,23 @@ export const IconContainer = styled.div`
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 600px) {
+  }
 `;
 
 export const ContactLink = styled.a`
   color: #ff4b4b;
+  text-decoration: none;
+  font-weight: 500;
+
 
   &:hover {
     opacity: 0.8;
+  }
+  @media screen and (max-width: 600px) {
+    color: #ff3c3c;
+    text-shadow: none;
+    font-weight: 500;
   }
 `;
