@@ -42,6 +42,7 @@ function App() {
 
   const handleClick = (s: (typeof social)[0]) => {
     window.location.href = s.link;
+    toggleDrawer(false);
   };
   return (
     <>
