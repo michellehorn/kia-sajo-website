@@ -6,9 +6,11 @@ export const HomeSection = styled(Section)`
   justify-content: space-between;
   align-items: center;
   margin: 0 0 0 7em;
+  height: 98vh;
 
   @media screen and (max-width: 600px) {
     position: relative;
+    height: 84vh;
     margin-left: 1em;
     iframe {
       position: absolute;

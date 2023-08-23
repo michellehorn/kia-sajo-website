@@ -5,10 +5,11 @@ const GlobalStyle = createGlobalStyle`
 html, body, #root  {
   scroll-behavior: smooth!important;
   height: 100vh;
+  overflow: hidden;
 }
 
 #root{
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

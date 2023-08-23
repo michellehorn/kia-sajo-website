@@ -1,14 +1,17 @@
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 
 export const ContactSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: end;
-  background-color: rgba(255, 255, 255, 0.5);
   position: relative;
+  height: 100vh;
 
   @media screen and (max-width: 600px) {
+    align-items: start;
     justify-content: center;
+    height: 75vh;
   }
 `;
 
@@ -17,20 +20,21 @@ export const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-left: 7em;
+  padding-left: 7em;
 
   @media screen and (max-width: 600px) {
-    margin: 0;
+    padding: 2em;
+    padding-bottom: 3em;
   }
 `;
 export const IconContainer = styled.div`
   display: flex;
   gap: 20px;
-  margin-top: 60px;
+  margin: 60px 0 30px;
   z-index: 20;
 
   & > a > svg {
-    fill: #aa0000;
+    fill: #ffcba9;
     height: 50px;
     opacity: 0.8;
     width: 50px;
@@ -44,20 +48,23 @@ export const IconContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    margin: 0;
   }
 `;
 
 export const ContactLink = styled.a`
-  color: #ff4b4b;
+  color: #ffcba9;
   text-decoration: none;
   font-weight: 500;
 
-
+  &:first-of-type {
+    font-weight: 900;
+  }
   &:hover {
     opacity: 0.8;
   }
   @media screen and (max-width: 600px) {
-    color: #ff3c3c;
+    color: ${isMobile ? "#620000" : "#ff3c3c"};
     text-shadow: none;
     font-weight: 500;
   }

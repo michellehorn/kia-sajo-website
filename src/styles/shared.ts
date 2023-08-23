@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { background } from "../assets";
+import { background, backgroundDark } from "../assets";
 import { StyleProps } from "../types";
 
 // animation
@@ -75,7 +75,7 @@ export const Parallax = styled.div`
 export const Section = styled.section`
   max-width: 100%;
   padding: 2em 2em 0 2em;
-  height: 90vh;
+  height: 98vh;
   @media screen and (max-width: 600px) {
     padding: 1em 1em 0;
   }
@@ -85,7 +85,7 @@ export const Title = styled.h1<StyleProps>`
   font-family: "beastly", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 140px;
+  font-size: ${({ fontSize }) => fontSize || "140px"};
   opacity: 0.8;
   background: linear-gradient(90deg, #ffcba9, transparent),
     linear-gradient(90deg, transparent, #ffcba9);
@@ -167,11 +167,18 @@ export const MenuBox = styled.nav`
   font-size: 20px;
   height: 100%;
   background-color: #ff0101d9;
+  background: linear-gradient(
+    200deg,
+    rgba(10, 10, 10, 0.9),
+    rgb(0, 0, 0),
+    rgba(10, 10, 10, 0.9)
+  );
+  background-image: url(${backgroundDark});
 
   & > a {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
-    color: #f3c00c;
+    color: #ffcba9;
     text-decoration: none;
     &:hover {
       transform: scale(1.1);
@@ -181,7 +188,7 @@ export const MenuBox = styled.nav`
   }
 
   @media screen and (max-width: 600px) {
-    width: 150px;
+    width: 220px;
   }
 `;
 
@@ -191,7 +198,7 @@ export const MenuImgContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #fdc0a0;
-  margin-bottom: 20px;
+  margin: 30px 0;
   border-radius: 50%;
   z-index: 20;
   overflow: hidden;
@@ -202,29 +209,38 @@ export const MenuImgContainer = styled.div`
   }
 `;
 
-export const IconContainer = styled.div`
-  display: flex;
+export const IconContainer = styled.div<StyleProps>`
+  display: ${({ display }) => display || "flex"};
   flex-wrap: wrap;
   z-index: 20;
   width: 100%;
-  justify-content: center;
+  justify-content: ${({ display }) =>
+    display === "flex" ? "center" : "inherit"};
   bottom: 0;
-  position: absolute;
-  margin-bottom: 8px;
+  position: ${({ display }) => (display === "flex" ? "absolute" : "relative")};
+  margin-bottom: 10px;
+  margin-top: 2em;
 
   & > a > svg {
-    fill: #f8d868;
-    height: 32px;
+    fill: #ffcba9;
+    height: ${({ height }) => height || "32px"};
     opacity: 0.8;
-    width: 50px;
+    width: ${({ width }) => width || "50px"};
     transition: ease 0.5s;
 
     &:hover {
       scale: 1.2;
       opacity: 1;
     }
+
+    @media screen and (max-width: 600px) {
+      height: 42px;
+      width: 55px;
+    }
   }
 
   @media screen and (max-width: 600px) {
-  }
+      display: flex;
+      justify-content: center;
+    }
 `;

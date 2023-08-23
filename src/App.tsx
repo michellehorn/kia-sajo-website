@@ -16,18 +16,29 @@ import {
   AmazonMusic,
   AppleMusic,
   Deezer,
-  Spotfy,
+  Spotify,
   folder,
 } from "./assets/images";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { menuItems, social } from "./assets/json";
 
 function App() {
-  const items = ["home", "sobre-mim", "galeria", "ouca-agora", "contato"];
   const [state, toggleDrawer] = useState(false);
 
   firebase.initializeApp(firebaseConfig);
+
+  const getIcon = (name: string) =>
+    ({
+      twitter: <TwitterIcon />,
+      instagram: <InstagramIcon />,
+      youtube: <YouTubeIcon />,
+      spotify: <Spotify />,
+      amazon_music: <AmazonMusic />,
+      apple_music: <AppleMusic />,
+      deezer: <Deezer />,
+    }[name]);
 
   return (
     <>
@@ -48,69 +59,25 @@ function App() {
             <MenuImgContainer>
               <img src={folder} />
             </MenuImgContainer>
-            {items.map((item) => (
-              <Link key={item} href={`#${item}`}>
-                {item}
+            {menuItems.map((item) => (
+              <Link key={item.anchor} href={`#${item.anchor}`}>
+                {item.title}
               </Link>
             ))}
-            <IconContainer>
-              <a
-                title="Twitter"
-                target="_blank"
-                href="https://twitter.com/kiasajo"
-              >
-                <TwitterIcon />
-              </a>
-              <a
-                title="Instagram"
-                target="_blank"
-                href="https://www.instagram.com/kiasajo/"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                title="Youtube"
-                target="_blank"
-                href="https://www.youtube.com/@KiaSajo"
-              >
-                <YouTubeIcon />
-              </a>
-              <a
-                title="Spotfy"
-                target="_blank"
-                href="https://open.spotify.com/intl-pt/artist/0WDFeDuCl5BcNrRZWO0pkS"
-              >
-                <Spotfy />
-              </a>
-              <a
-                title="Amazon Music"
-                target="_blank"
-                href="https://www.amazon.com/music/player/artists/B077XFBBWS/kia-sajo"
-              >
-                <AmazonMusic />
-              </a>
-              <a
-                title="Apple Music"
-                target="_blank"
-                href="https://music.apple.com/br/artist/kia-sajo/1315490604"
-              >
-                <AppleMusic />
-              </a>
-              <a
-                title="Deezer"
-                target="_blank"
-                href="https://deezer.page.link/h72o4yiBtxdEfejN7"
-              >
-                <Deezer />
-              </a>
+            <IconContainer display="flex">
+              {social.map((s) => (
+                <a title={s.title} target="_blank" href={s.link}>
+                  {getIcon(s.icon)}
+                </a>
+              ))}
             </IconContainer>
           </MenuBox>
         </SwipeableDrawer>
       </Fragment>
       <Parallax />
       <Homepage id="home" />
-      <About id="sobre-mim" />
       <Gallery id="galeria" />
+      <About id="sobre-mim" />
       <Album id="ouca-agora" />
       <Contact id="contato" />
     </>

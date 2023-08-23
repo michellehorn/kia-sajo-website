@@ -21,11 +21,12 @@ import img9 from "./gallery/image9.jpg";
 
 //contact
 import photo2 from "./photo2.png";
+import photo3 from "./side.png";
 
 //icons
 import { AppleMusic } from "./icons/Applemusic";
 import { AmazonMusic } from "./icons/Amazonmusic";
-import { Spotfy } from "./icons/Spotify";
+import { Spotify } from "./icons/Spotify";
 import { Deezer } from "./icons/Deezer";
 
 const gallery = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
@@ -42,5 +43,6 @@ export {
   imageSideMobile,
   logo,
   photo2,
-  Spotfy,
+  photo3,
+  Spotify,
 };

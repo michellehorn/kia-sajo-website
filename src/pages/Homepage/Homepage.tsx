@@ -33,7 +33,7 @@ export const Homepage = ({ id }: { id: string }) => {
           animationType="fadeIn"
           src={collabImg2}
           height={500}
-          index={20}
+          index={0}
         />
         <AnimationImg
           animationType="fromRight"

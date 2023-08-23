@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Section } from "../../styles/shared";
 
 export const SectionGallery = styled(Section)`
+  height: max-content;
   padding: 1px;
   @media screen and (max-width: 600px) {
     padding: 0;
@@ -16,6 +17,9 @@ export const GalleryItem = styled.img`
   border-top: none;
   border-bottom: none;
   margin-bottom: -5px;
+  @media screen and (max-width: 600px) {
+    height: 350px;
+  }
 `;
 
 interface GalleryVideoProps {

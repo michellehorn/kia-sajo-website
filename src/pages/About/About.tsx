@@ -12,8 +12,13 @@ export const About = ({ id }: { id: string }) => {
   return (
     <SectionAbout id={id}>
       <SectionInfo>
-        <SectionTitle fontSize="40px">A ARTISTA</SectionTitle>
-        <SectionDescription fontSize={isMobile ? "12px" : "16px"}>
+        <SectionTitle fontSize="40px" fontcolor="#ffcba9">
+          A ARTISTA
+        </SectionTitle>
+        <SectionDescription
+          fontcolor="#ffcba9"
+          fontSize={isMobile ? "12px" : "16px"}
+        >
           {about}
         </SectionDescription>
       </SectionInfo>

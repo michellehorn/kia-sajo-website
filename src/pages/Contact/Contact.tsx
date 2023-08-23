@@ -1,5 +1,5 @@
 import { isMobile } from "react-device-detect";
-import { photo2 } from "../../assets/images";
+import { photo3 } from "../../assets/images";
 import {
   AnimationImg,
   SectionDescription,
@@ -17,26 +17,25 @@ import MailIcon from "@mui/icons-material/Mail";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export const Contact = ({ id }: { id: string }) => {
-  console.log(isMobile);
   return (
     <ContactSection id={id}>
       <ContactContainer>
-        <SectionTitle fontSize="40px" fontcolor="#AA0000">
+        <SectionTitle fontSize="40px" fontcolor="#ffcba9">
           CONTATO
         </SectionTitle>
         <div>
           <SectionDescription
-            fontcolor="#ff0101"
             fontSize="28px"
             textalign="center"
             width="auto"
             fontweight={600}
+            fontcolor="#ffcba9"
           >
             Shows
           </SectionDescription>
           <SectionDescription
-            fontcolor="#ff5f5f"
             fontSize={isMobile ? "18px" : "24px"}
+            fontcolor="#ffcba9"
             textalign="center"
             width="auto"
           >
@@ -52,8 +51,8 @@ export const Contact = ({ id }: { id: string }) => {
             </ContactLink>{" "}
           </SectionDescription>
           <SectionDescription
-            fontcolor="#ff0101"
             fontSize="28px"
+            fontcolor="#ffcba9"
             fontweight={600}
             textalign="center"
             width="auto"
@@ -61,7 +60,6 @@ export const Contact = ({ id }: { id: string }) => {
             Publicidade
           </SectionDescription>
           <SectionDescription
-            fontcolor="#ff5f5f"
             fontSize={isMobile ? "18px" : "24px"}
             textalign="center"
             width="auto"
@@ -82,26 +80,41 @@ export const Contact = ({ id }: { id: string }) => {
           <a title="Twitter" target="_blank" href="https://twitter.com/kiasajo">
             <TwitterIcon />
           </a>
-          <a title="Instagram" target="_blank" href="https://www.instagram.com/kiasajo/">
+          <a
+            title="Instagram"
+            target="_blank"
+            href="https://www.instagram.com/kiasajo/"
+          >
             <InstagramIcon />
           </a>
-          <a title="E-mail" target="_blank" href="mailto:kiasajo@outlook.com?subject=Contato Kia Sajo">
+          <a
+            title="E-mail"
+            target="_blank"
+            href="mailto:kiasajo@outlook.com?subject=Contato Kia Sajo"
+          >
             <MailIcon />
           </a>
-          <a title="Youtube" target="_blank" href="https://www.youtube.com/@KiaSajo">
+          <a
+            title="Youtube"
+            target="_blank"
+            href="https://www.youtube.com/@KiaSajo"
+          >
             <YouTubeIcon />
           </a>
         </IconContainer>
       </ContactContainer>
-      <AnimationImg
-        style={{
-          opacity: isMobile ? 0.2 : 0,
-          position: isMobile ? "absolute" : "relative",
-        }}
-        height={isMobile ? 450 : 550}
-        src={photo2}
-        animationType={isMobile ? undefined : "fromLeft"}
-      />
+      {!isMobile && (
+        <AnimationImg
+          style={{
+            opacity: isMobile ? 0.2 : 0,
+            position: isMobile ? "absolute" : "relative",
+            bottom: isMobile ? 0 : "inherit",
+          }}
+          height={isMobile ? "490px" : "610px"}
+          src={photo3}
+          animationType={isMobile ? undefined : "fromLeft"}
+        />
+      )}
     </ContactSection>
   );
 };

@@ -101,7 +101,6 @@ export const Gallery = ({ id }: { id: string }) => {
               pip
             />
           )}
-          test
         </SwipeableDrawer>
       ) : (
         <ModalVideo
