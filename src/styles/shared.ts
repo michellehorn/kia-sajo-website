@@ -234,8 +234,8 @@ export const IconContainer = styled.div<StyleProps>`
     }
 
     @media screen and (max-width: 600px) {
-      height: 42px;
-      width: 55px;
+      height:  ${({ display }) => (display !== "flex" ? "42px" : "32px")};
+      width: ${({ display }) => (display !== "flex" ? "55px" : "60px")};
     }
   }
 

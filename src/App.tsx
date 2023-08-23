@@ -40,6 +40,9 @@ function App() {
       deezer: <Deezer />,
     }[name]);
 
+  const handleClick = (s: (typeof social)[0]) => {
+    window.location.href = s.link;
+  };
   return (
     <>
       <GlobalStyle />
@@ -66,7 +69,11 @@ function App() {
             ))}
             <IconContainer display="flex">
               {social.map((s) => (
-                <a title={s.title} target="_blank" href={s.link}>
+                <a
+                  title={s.title}
+                  target="_blank"
+                  onClick={() => handleClick(s)}
+                >
                   {getIcon(s.icon)}
                 </a>
               ))}

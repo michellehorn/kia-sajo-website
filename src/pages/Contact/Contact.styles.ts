@@ -64,7 +64,7 @@ export const ContactLink = styled.a`
     opacity: 0.8;
   }
   @media screen and (max-width: 600px) {
-    color: ${isMobile ? "#620000" : "#ff3c3c"};
+    color: ${isMobile ? "#ffcba9" : "#ff3c3c"};
     text-shadow: none;
     font-weight: 500;
   }
