@@ -19,6 +19,7 @@ export const Homepage = ({ id }: { id: string }) => {
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
+          title="Player do Spotfy do single Gitana de Kia Sajo"
         ></iframe>
       </div>
       <ImgContainer>
@@ -26,12 +27,14 @@ export const Homepage = ({ id }: { id: string }) => {
           animationType="fromLeft"
           src={collabImg1}
           height={380}
+          alt="Foto decorativa de Kia Sajo"
           delay={1}
           margin="0 -25px 0 0"
         />
         <AnimationImg
           animationType="fadeIn"
           src={collabImg2}
+          alt="Foto decorativa de Kia Sajo"
           height={500}
           index={0}
         />
@@ -39,6 +42,7 @@ export const Homepage = ({ id }: { id: string }) => {
           animationType="fromRight"
           src={collabImg3}
           delay={1}
+          alt="Foto decorativa de Kia Sajo"
           duration={1}
           height={480}
           margin="0 0 0 -50px"

@@ -27,6 +27,7 @@ export const About = ({ id }: { id: string }) => {
         height={isMobile ? 450 : 550}
         animationType={isMobile ? undefined : "fromLeft"}
         delay={1}
+        alt="Foto decorativa de Kia Sajo"
         margin="0 0 -2px auto"
         style={{
           position: "absolute",
