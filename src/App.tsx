@@ -4,7 +4,9 @@ import { About, Album, Contact, Gallery, Homepage } from "./pages";
 import GlobalStyle from "./styles/globalStyle";
 import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import {
+  HiddenText,
   IconContainer,
   MenuBox,
   MenuContainer,
@@ -51,6 +53,7 @@ function App() {
         <MenuContainer>
           <Button onClick={() => toggleDrawer(true)}>
             <MenuIcon fontSize="large" color="inherit" />
+            <HiddenText style={{ display: "none" }}>Abrir Menu</HiddenText>
           </Button>
         </MenuContainer>
         <SwipeableDrawer
@@ -60,18 +63,32 @@ function App() {
           onOpen={() => toggleDrawer(true)}
         >
           <MenuBox>
+            <Button
+              style={{ position: "absolute", right: "0" }}
+              onClick={() => toggleDrawer(false)}
+            >
+              <CloseIcon fontSize="large" color="inherit" />
+              <HiddenText style={{ display: "none" }}>Fechar Menu</HiddenText>
+            </Button>
             <MenuImgContainer>
-              <img src={folder} />
+              <img
+                alt="Foto decorativa de Kia Sajo"
+                src={folder}
+              />
             </MenuImgContainer>
             {menuItems.map((item) => (
-              <Link key={item.anchor} href={`#${item.anchor}`}>
+              <Link
+                key={item.anchor}
+                aria-label={item.title}
+                href={`#${item.anchor}`}
+              >
                 {item.title}
               </Link>
             ))}
             <IconContainer display="flex">
               {social.map((s) => (
                 <a
-                  title={s.title}
+                aria-label={s.title}
                   target="_blank"
                   onClick={() => handleClick(s)}
                 >

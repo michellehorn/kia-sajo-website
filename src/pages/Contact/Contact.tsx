@@ -77,25 +77,25 @@ export const Contact = ({ id }: { id: string }) => {
           </SectionDescription>
         </div>
         <IconContainer>
-          <a title="Twitter" target="_blank" href="https://twitter.com/kiasajo">
+          <a aria-label="Twitter" target="_blank" href="https://twitter.com/kiasajo">
             <TwitterIcon />
           </a>
           <a
-            title="Instagram"
+            aria-label="Instagram"
             target="_blank"
             href="https://www.instagram.com/kiasajo/"
           >
             <InstagramIcon />
           </a>
           <a
-            title="E-mail"
+            aria-label="E-mail"
             target="_blank"
             href="mailto:kiasajo@outlook.com?subject=Contato Kia Sajo"
           >
             <MailIcon />
           </a>
           <a
-            title="Youtube"
+            aria-label="Youtube"
             target="_blank"
             href="https://www.youtube.com/@KiaSajo"
           >
@@ -105,6 +105,7 @@ export const Contact = ({ id }: { id: string }) => {
       </ContactContainer>
       {!isMobile && (
         <AnimationImg
+          alt="Foto decorativa de Kia Sajo"
           style={{
             opacity: isMobile ? 0.2 : 0,
             position: isMobile ? "absolute" : "relative",

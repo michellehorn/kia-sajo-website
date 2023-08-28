@@ -190,6 +190,10 @@ export const MenuBox = styled.nav`
   @media screen and (max-width: 600px) {
     width: 220px;
   }
+
+  & button > svg {
+    fill: #ddd;
+  }
 `;
 
 export const MenuImgContainer = styled.div`
@@ -234,13 +238,20 @@ export const IconContainer = styled.div<StyleProps>`
     }
 
     @media screen and (max-width: 600px) {
-      height:  ${({ display }) => (display !== "flex" ? "42px" : "32px")};
+      height: ${({ display }) => (display !== "flex" ? "42px" : "32px")};
       width: ${({ display }) => (display !== "flex" ? "55px" : "60px")};
     }
   }
 
   @media screen and (max-width: 600px) {
-      display: flex;
-      justify-content: center;
-    }
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const HiddenText = styled.span`
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 `;

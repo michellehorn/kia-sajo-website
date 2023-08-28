@@ -22,7 +22,7 @@ export const Album = ({ id }: { id: string }) => {
   const ListenToBox = () => (
     <IconContainer width="75px" height="60px">
       {social.map((s) => (
-        <a title={s.title} target="_blank" href={s.link}>
+        <a aria-label={s.title} target="_blank" href={s.link}>
           {getIcon(s.icon)}
         </a>
       ))}
@@ -52,6 +52,7 @@ export const Album = ({ id }: { id: string }) => {
           height="420px"
           frameBorder="0"
           allowFullScreen
+          title="Player do Spotfy do EP Onda Máxima de Kia Sajo"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
