@@ -66,7 +66,7 @@ export const AnimationImg = styled.img<StyleProps>`
 
 export const Parallax = styled.div`
   background-image: url(${background});
-  height: 400vh;
+  height: 405vh;
   width: 100%;
   position: absolute;
   z-index: -2;

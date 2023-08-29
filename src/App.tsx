@@ -40,9 +40,11 @@ function App() {
       deezer: <Deezer />,
     }[name]);
 
-  const handleClick = (s: (typeof social)[0]) => {
-    window.location.href = s.link;
-    toggleDrawer(false);
+  const handleClick = (item: (typeof menuItems)[0]) => {
+    window.location.href =`#${item.anchor}`;
+    setTimeout(() => {
+      toggleDrawer(false);
+    }, 1000);
   };
   return (
     <>
@@ -58,23 +60,20 @@ function App() {
           open={state}
           onClose={() => toggleDrawer(false)}
           onOpen={() => toggleDrawer(true)}
+          closeAfterTransition
         >
           <MenuBox>
             <MenuImgContainer>
               <img src={folder} />
             </MenuImgContainer>
             {menuItems.map((item) => (
-              <Link key={item.anchor} href={`#${item.anchor}`}>
+              <Link key={item.anchor} onClick={() => handleClick(item)}>
                 {item.title}
               </Link>
             ))}
             <IconContainer display="flex">
               {social.map((s) => (
-                <a
-                  title={s.title}
-                  target="_blank"
-                  onClick={() => handleClick(s)}
-                >
+                <a title={s.title} target="_blank" href={s.link}>
                   {getIcon(s.icon)}
                 </a>
               ))}

@@ -67,5 +67,6 @@ export const ContactLink = styled.a`
     color: ${isMobile ? "#ffcba9" : "#ff3c3c"};
     text-shadow: none;
     font-weight: 500;
+    font-size: 70%;
   }
 `;

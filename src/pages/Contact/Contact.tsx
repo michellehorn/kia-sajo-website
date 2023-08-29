@@ -90,7 +90,7 @@ export const Contact = ({ id }: { id: string }) => {
           <a
             title="E-mail"
             target="_blank"
-            href="mailto:kiasajo@outlook.com?subject=Contato Kia Sajo"
+            href="mailto:contato@kiasajo.com?subject=Contato Kia Sajo"
           >
             <MailIcon />
           </a>
