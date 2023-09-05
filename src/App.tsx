@@ -41,7 +41,7 @@ function App() {
     }[name]);
 
   const handleClick = (item: (typeof menuItems)[0]) => {
-    window.location.href =`#${item.anchor}`;
+    window.location.href = `#${item.anchor}`;
     setTimeout(() => {
       toggleDrawer(false);
     }, 1000);
@@ -67,7 +67,11 @@ function App() {
               <img src={folder} />
             </MenuImgContainer>
             {menuItems.map((item) => (
-              <Link key={item.anchor} onClick={() => handleClick(item)}>
+              <Link
+                key={item.anchor}
+                onClick={() => handleClick(item)}
+                style={{ cursor: "pointer" }}
+              >
                 {item.title}
               </Link>
             ))}

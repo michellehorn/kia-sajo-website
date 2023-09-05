@@ -9,6 +9,7 @@ import {
   ContactContainer,
   ContactLink,
   ContactSection,
+  FooterMessage,
   IconContainer,
 } from "./Contact.styles";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -115,6 +116,12 @@ export const Contact = ({ id }: { id: string }) => {
           animationType={isMobile ? undefined : "fromLeft"}
         />
       )}
+      <FooterMessage>
+        made with ♥️ by{" "}
+        <a href="http://michellehorn.dev" target="_blank">
+          @michellehorn
+        </a>
+      </FooterMessage>
     </ContactSection>
   );
 };

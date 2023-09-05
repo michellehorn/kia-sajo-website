@@ -6,7 +6,7 @@ export const HomeSection = styled(Section)`
   justify-content: space-between;
   align-items: center;
   margin: 0 0 0 7em;
-  height: 98vh;
+  height: 100vh;
 
   @media screen and (max-width: 600px) {
     position: relative;

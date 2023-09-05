@@ -11,7 +11,6 @@ export const ContactSection = styled.section`
   @media screen and (max-width: 600px) {
     align-items: start;
     justify-content: center;
-    height: 75vh;
   }
 `;
 
@@ -24,7 +23,6 @@ export const ContactContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     padding: 2em;
-    padding-bottom: 3em;
   }
 `;
 export const IconContainer = styled.div`
@@ -68,5 +66,15 @@ export const ContactLink = styled.a`
     text-shadow: none;
     font-weight: 500;
     font-size: 70%;
+  }
+`;
+
+export const FooterMessage = styled.div`
+  position: absolute;
+  bottom: 120px;
+  height: 60px;
+  color: white;
+  a {
+    color: #ffcba9;
   }
 `;

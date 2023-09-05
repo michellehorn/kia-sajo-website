@@ -1,10 +1,9 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyCvspo_zKCjMmEBGCAJ51gIf3YVK_LxVcQ",
-  authDomain: "kia-sajo-website.firebaseapp.com",
-  databaseURL: "https://kia-sajo-website-default-rtdb.firebaseio.com",
-  projectId: "kia-sajo-website",
-  storageBucket: "kia-sajo-website.appspot.com",
-  messagingSenderId: "591344305546",
-  appId: "1:591344305546:web:d51429206cdf2164c2f473",
-  measurementId: "G-STEHVMP978",
+  apiKey: "AIzaSyC_MRvzXIk-dY03-kiDDZBaU0DB4RsPvf0",
+  authDomain: "kiasajo.firebaseapp.com",
+  projectId: "kiasajo",
+  storageBucket: "kiasajo.appspot.com",
+  messagingSenderId: "26187101702",
+  appId: "1:26187101702:web:67936610912c1839dab587",
+  measurementId: "G-S22ZP8FBY0"
 };
