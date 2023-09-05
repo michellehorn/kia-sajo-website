@@ -103,6 +103,19 @@ export const Contact = ({ id }: { id: string }) => {
             <YouTubeIcon />
           </a>
         </IconContainer>
+        <FooterMessage>
+          made with ♥️ by{" "}
+          <a href="http://michellehorn.dev" target="_blank">
+            @michellehorn
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://denisluft8.github.io/portfolio-denisluft/"
+            target="_blank"
+          >
+            @denisluft
+          </a>
+        </FooterMessage>
       </ContactContainer>
       {!isMobile && (
         <AnimationImg
@@ -116,12 +129,6 @@ export const Contact = ({ id }: { id: string }) => {
           animationType={isMobile ? undefined : "fromLeft"}
         />
       )}
-      <FooterMessage>
-        made with ♥️ by{" "}
-        <a href="http://michellehorn.dev" target="_blank">
-          @michellehorn
-        </a>
-      </FooterMessage>
     </ContactSection>
   );
 };

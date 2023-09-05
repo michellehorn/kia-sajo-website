@@ -65,4 +65,8 @@ export const GalleryVideo = styled.div<GalleryVideoProps>`
     position: relative;
     width: 100%;
   }
+  @media screen and (min-width: 1442px) {
+    position: relative;
+    width: 339px;
+  }
 `;
