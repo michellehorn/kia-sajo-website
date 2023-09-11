@@ -28,7 +28,7 @@ export const ContactContainer = styled.div`
 export const IconContainer = styled.div`
   display: flex;
   gap: 20px;
-  margin: 60px 0 30px;
+  margin: 60px 0 46px;
   z-index: 20;
 
   & > a > svg {
@@ -71,10 +71,14 @@ export const ContactLink = styled.a`
 
 export const FooterMessage = styled.div`
   position: absolute;
-  bottom: 120px;
-  height: 60px;
+  bottom: 0;
   color: white;
+  padding-bottom: 12px;
   a {
     color: #ffcba9;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
